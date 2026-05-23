@@ -79,7 +79,6 @@ return new class extends Migration
             $table->foreignId('tipo_nuip_id')->constrained('tipo_nuip');
             $table->string('telefono', 20);
             $table->string('direccion');
-            $table->enum('rol', ['admin', 'aprendiz', 'instructor'])->default('aprendiz');
             $table->date('fecha_nacimiento');
             $table->rememberToken();
             $table->timestamps();
@@ -89,6 +88,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('usuario_id')
                   ->constrained('users')
+                  ->unique()
                   ->cascadeOnDelete();
             $table->foreignId('nivel_formacion_id')->constrained('nivel_formacion');
             $table->foreignId('especialidad_id')->constrained('especialidad');
@@ -115,6 +115,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('usuario_id')
                   ->constrained('users')
+                  ->unique()
                   ->cascadeOnDelete();
             $table->foreignId('ficha_id')->constrained('ficha');
             $table->foreignId('alternativa_id')->constrained('alternativa');
