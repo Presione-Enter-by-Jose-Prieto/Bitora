@@ -11,7 +11,7 @@
     flex 
     justify-center items-center 
     m-0 w-full h-full 
-    bg-neutral-100 dark:bg-neutral-900 
+    bg-gray-50 dark:bg-neutral-900 
     text-black dark:text-white
     ">
     
